@@ -1,0 +1,110 @@
+@import "vars";
+
+.product-detail {
+  max-width: 360px;
+  max-height: calc(100vh - 70px);
+  padding: 24px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 61px;
+  right: 50px;
+  background-color: white;
+  border-radius: 12px;
+  border: solid 1px var(--very-light-pink);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.title-container {
+  display: flex;
+}
+.title-container img {
+  transform: rotate(180deg);
+  margin-right: 14px;
+}
+.title {
+  font-size: var(--lg);
+  font-weight: bold;
+}
+.my-order-content {
+  width: 100%;
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-content: space-between;
+  place-content: center;
+}
+.my-order-content__container-cards{
+  overflow-y: scroll;
+  height: auto;
+  max-height: 60vh;
+}
+.my-order-content__info{
+  align-self: flex-end;
+}
+.order {
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  gap:20px;
+  align-items: center;
+  background-color: var(--text-input-field);
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+.order p:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+}
+.order p span:nth-child(1) {
+  font-size: var(--md);
+  font-weight: bold;
+}
+.order p:nth-child(2) {
+  text-align: end;
+  font-weight: bold;
+}
+.shopping-cart {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: center;
+}
+.shopping-cart figure {
+  margin: 0;
+}
+.shopping-cart figure img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.shopping-cart > img {
+  cursor: pointer;
+}
+.shopping-cart p:nth-child(2) {
+  color: var(--very-light-pink);
+}
+.shopping-cart p:nth-child(3) {
+  font-size: var(--md);
+  font-weight: bold;
+}
+.primary-button {
+  background-color: var(--hospital-green);
+  border-radius: 8px;
+  border: none;
+  color: var(--white);
+  width: 100%;
+  cursor: pointer;
+  font-size: var(--md);
+  font-weight: bold;
+  height: 50px;
+}
+@media (max-width: 640px) {
+  .product-detail {
+    max-width: none;
+    width: 100vw;
+    height: auto;
+    left: 0;
+  }
+}

@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
   entry: [
-    'react-hot-loader/patch',
     './src/index.js'
   ],
   output: {
@@ -15,7 +14,13 @@ const config = {
   resolve: {
     alias: {
       '@icons': path.resolve(__dirname, 'src/images/icons'),
-      '@logos': path.resolve(__dirname, 'src/images/logos')
+      '@logos': path.resolve(__dirname, 'src/images/logos'),
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@containers': path.resolve(__dirname, 'src/containers'),
+      '@hooks': path.resolve(__dirname, 'src/hooks'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@context' : path.resolve(__dirname, 'src/context'),
+      '@routes' : path.resolve(__dirname, 'src/routes')
     }
   },
   module: {
@@ -56,7 +61,8 @@ const config = {
   devServer: {
     'static': {
       directory: './dist'
-    }
+    },
+    historyApiFallback : true
   },
   plugins: [
     new HtmlWebpackPlugin({
